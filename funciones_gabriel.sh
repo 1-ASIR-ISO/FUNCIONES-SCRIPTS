@@ -9,6 +9,12 @@ exito="\e[32m"
 reset="\e[0m"
 
 # =========================================
+f_uid() {
+    id -u
+}
+
+echo "Mi UID es: $(f_uid)"
+
 f_buscar_paquetes() {
     echo -n "Introduce la ruta al binario: "
     read binario
@@ -24,8 +30,4 @@ f_buscar_paquetes() {
     fi
 }
 
-f_uid() {
-    id -u
-}
-
-echo "Mi UID es: $(f_uid)"
+f_buscar_paquetes
