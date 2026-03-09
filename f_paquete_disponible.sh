@@ -10,17 +10,17 @@ exito="\e[32m"
 reset="\e[0m"
 
 # =========================================
-
 f_paquete_disponible() {
-    nombre_paquete=$1
-    
-    resultado=$(apt-cache policy $nombre_paquete 2>/dev/null | grep "Candidate:")
-    
+echo -n "Introduce el nombre del paquete: "
+    read nombre_paquete
+    resultado=$(apt-cache policy "$nombre_paquete" 2>/dev/null | grep "Candidato:")
     if [ -n "$resultado" ]; then
-	echo "Paquete '$nombre_paquete' esta disponible"
+        echo "Paquete '$nombre_paquete' ESTA disponible"
         return 0
     else
-	echo "Paquete '$nombre_paquete' NO esta disponible"
+        echo "Paquete '$nombre_paquete' NO ESTA disponible"
         return 1
     fi
 }
+
+f_paquete_disponible
