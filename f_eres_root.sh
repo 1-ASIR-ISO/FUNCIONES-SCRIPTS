@@ -20,3 +20,4 @@ f_eres_root() {
         return 1
     fi
 }
+f_eres_root
