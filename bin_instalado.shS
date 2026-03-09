@@ -10,16 +10,14 @@ reset="\e[0m"
 
 # ========================================= bin_instalado
 
-f_bin_instalado(){
-  if command -v "$1" &>/dev/null; then
-	echo "Si está instalado"
-	return 0
+function f_bin_instalado {
+  if command -v "$i" &>/dev/null; then
+   return 0
 
   else
-	echo "No está instalado"
-	return 1
+   return 1
 
   fi
 }
 
-f_bin_instalado "$1"
+f_bin_instalado $i
