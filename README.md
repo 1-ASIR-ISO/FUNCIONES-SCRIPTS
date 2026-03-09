@@ -5,6 +5,7 @@ repositorio dedicado a crear funciones del modulo Implantación Sistemas Operati
 ----------------------------------------------------------------------------------------------------------------------
 
 ISMAEL:
+
 f_ayuda
 Muestra por pantalla la sintaxis correcta del script, descripción de lo que hace el script así como los parámetros aceptados.
 
@@ -18,6 +19,7 @@ Indica los 10 comandos más utilizados en la shell
 
 
 ADRIÁN:
+
 f_bin_instalado
 Función que devuelve cero en caso de estar instalado el binario que se pasa como argumento.y uno en caso contrario,
 
@@ -27,6 +29,7 @@ Devuelve cero en caso de tener conexión a red, uno en caso contrario.
 ----------------------------------------------------------------------------------------------------------------------
 
 SERGIO:
+
 f_eres_root
 Devuelve cero en caso de estar validado en la shell como root, uno en caso contrario.
 
@@ -36,6 +39,7 @@ Devuelve cero en caso de estar disponible en el repositorio configurado en sourc
 ----------------------------------------------------------------------------------------------------------------------
 
 GABRIEL:
+
 f_paquete_instalado
 Devuelve cero en caso de estar instalado el paquete pasado como argumento, uno en caso contrario.
 
