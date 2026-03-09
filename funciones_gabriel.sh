@@ -30,4 +30,21 @@ f_buscar_paquetes() {
     fi
 }
 
+f_paquete_instalado() {
+    echo -n "Introduce nombre del paquete: "
+    read paquete
+    if [ -z "$paquete" ]; then
+        echo "❌ Debes introducir un paquete valido" >&2
+        return 1
+    fi
+    if dpkg-query -W -f='${Status}' "$paquete" 2>/dev/null | grep -q "ok installed"; then
+        echo "✅ $paquete ESTÁ INSTALADO"
+        return 0
+    else
+        echo "❌ $paquete NO está instalado"
+        return 1
+    fi
+}
+
 f_buscar_paquetes
+f_paquete_instalado
