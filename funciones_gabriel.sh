@@ -10,15 +10,22 @@ reset="\e[0m"
 
 # =========================================
 f_buscar_paquetes() {
-    if [ $# -ne 1 ]; then
-        echo "Uso: f_buscar_paquetes <binario>"
+    echo -n "Introduce la ruta al binario: "
+    read binario
+    if [ -z "$binario" ]; then
+        echo "Debes introducir un binario" >&2
         return 1
     fi
-    paquete=$(dpkg -S "$1" 2>/dev/null | cut -d: -f1)
+    paquete=$(dpkg -S "$binario" 2>/dev/null | cut -d: -f1 2>/dev/null || echo "")
     if [ -n "$paquete" ]; then
-        echo "$paquete"
+        echo "Paquete: $paquete"
     else
-        echo "Paquete no encontrado"
+        echo "Paquete no encontrado para '$binario'"
     fi
 }
 
+f_uid() {
+    id -u
+}
+
+echo "Mi UID es: $(f_uid)"
