@@ -10,8 +10,11 @@ reset="\e[0m"
 
 # ========================================= bin_instalado
 
+echo "Dime el nombre del binario"
+read bin
+
 f_bin_instalado(){
-  if command -v "$1" &>/dev/null; then
+  if command -v $bin &>/dev/null; then
 	echo "Si está instalado"
 	return 0
 
@@ -22,4 +25,4 @@ f_bin_instalado(){
   fi
 }
 
-f_bin_instalado "$1"
+f_bin_instalado $bin
