@@ -19,14 +19,16 @@ f_buscar_paquetes() {
     echo -n "Introduce la ruta al binario: "
     read binario
     if [ -z "$binario" ]; then
-        echo "Debes introducir un binario" >&2
+        echo "❌ Debes introducir un binario$ correcto ❌" >&2
         return 1
     fi
-    paquete=$(dpkg -S "$binario" 2>/dev/null | cut -d: -f1 2>/dev/null || echo "")
+    paquete=$(dpkg -S "$binario" 2>/dev/null | head -n1 | cut -d: -f1)
     if [ -n "$paquete" ]; then
-        echo "Paquete: $paquete"
+        echo "✅ Paquete: $paquete ✅"
+        return 0
     else
-        echo "Paquete no encontrado para '$binario'"
+        echo "❌ Paquete no encontrado para '$binario'❌"
+        return 1 
     fi
 }
 
