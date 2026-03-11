@@ -1,10 +1,16 @@
 #!/usr/bin/env bash
 
-#Función: f_ranking_comandos
-#Descripción: Muestra los 10 comandos más utilizados por el usuario.
-#Autor: Pablo Villalón Alfaro
-#Versión: 1
-#Fecha: 10/03/2026
+# Autor: Pablo Villalón Alfaro
+# Versión: 1
+# Fecha: 10/03/2026
+
+# ===============================================================
+
+# Nombre: f_ranking_comandos
+# Descripción: Muestra los 10 comandos más utilizados por el usuario.
+# Parámetros Entrada: 0
+# Parámetros Salida: Muestra el Top 10 de los comandos más utilizados por el usuario
+#         ordenado de mayor a menor con el nº de veces que se ha ejecutado cada uno.
 
 f_ranking_comandos() {
 
