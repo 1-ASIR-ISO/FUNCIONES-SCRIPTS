@@ -10,16 +10,16 @@ reset="\e[0m"
 
 # ========================================= bin_instalado
 
-echo "Dime el nombre del binario"
+echo -e "${azul}Dime el nombre del binario${reset}"
 read bin
 
 f_bin_instalado(){
   if command -v $bin &>/dev/null; then
-	echo "Si está instalado"
+	echo -e "${exito}Si está instalado ${reset}"
 	return 0
 
   else
-	echo "No está instalado"
+	echo -e "${error}No está instalado ${reset}"
 	return 1
 
   fi
