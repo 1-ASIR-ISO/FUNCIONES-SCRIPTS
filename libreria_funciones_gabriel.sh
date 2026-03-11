@@ -47,10 +47,29 @@ f_paquete_instalado() {
     fi
 }
 
+f_paquete_disponible() {
+echo -n "Introduce el nombre del paquete: "
+    read nombre_paquete
+    resultado=$(apt-cache policy "$nombre_paquete" 2>/dev/null | grep "Candidato:")
+    if [ -n "$resultado" ]; then
+        echo "Paquete '$nombre_paquete' ESTA disponible"
+        return 0
+    else
+        echo "Paquete '$nombre_paquete' NO ESTA disponible"
+        return 1
+    fi
+}
 
-
-
-
+f_eres_root() {
+    usuario_id=$(id -u)
+    if [ $usuario_id = 0 ]; then
+	echo "Eres root"
+        return 0
+    else
+	echo "No eres root, hazlo como root"
+        return 1
+    fi
+}
 
 
 # =========================================
