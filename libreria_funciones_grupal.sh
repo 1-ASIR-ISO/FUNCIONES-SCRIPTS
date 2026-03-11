@@ -99,3 +99,11 @@ f_ayuda() {
   printf " PARAM1 - Explicación del parametro 1\n"
   printf " PARAM2 - Explicación del parametro 2${reset}\n"
 }
+
+f_parametros() {
+  if [ $# -lt 2 ]; then
+  printf "${error}FALTAN PARAMETROS${reset}\n"
+  f_ayuda
+  exit 1
+  fi
+}
