@@ -60,19 +60,6 @@ echo -n "Introduce el nombre del paquete: "
     fi
 }
 
-f_eres_root() {
-    usuario_id=$(id -u)
-    if [ $usuario_id = 0 ]; then
-	echo "Eres root"
-        return 0
-    else
-	echo "No eres root, hazlo como root"
-        return 1
-    fi
-}
-
-
-# =========================================
 f_listar_interfaces() {
     echo "${azul}📡 INTERFACES DE RED DETECTADAS:${reset}"
     mapfile -t interfaces < <(ip -o link show | awk -F': ' '{print $2}' | grep -E '^(enx|wlp|eth|wlan|docker|virbr)')
