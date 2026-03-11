@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-# Autor: 
-# Fecha: 
+# Autor: Pablo Villalón Alfaro
+# Fecha: 10/03/2026
 
 error="\e[31m"
 azul="\e[1;34m"
@@ -8,10 +8,11 @@ exito="\e[32m"
 reset="\e[0m"
 
 # =========================================
-# Nombre: 
-# Descripción: 
-# Parametros Entrada: 
-# Parametros Salida: 
+# Nombre: f_ranking_comandos
+# Descripción: Muestra los 10 comandos más utilizados por el usuario.
+# Parámetros Entrada: 0
+# Parámetros Salida: Muestra el Top 10 de los comandos más utilizados por el usuario
+#         ordenado de mayor a menor con el nº de veces que se ha ejecutado cada uno.
 
 f_ranking_comandos() {
 
@@ -23,7 +24,7 @@ f_ranking_comandos() {
 
     #Cabecera
     printf "${azul}======================================${reset}\n"
-    printf "${exito}TOP 10 COMANDOS MÁS USADOS${reset}\n"
+    printf "${exito}     TOP 10 COMANDOS MÁS USADOS${reset}\n"
     printf "${azul}======================================${reset}\n"
 
     #Explicación de comandos que se usan en esta función:
@@ -37,7 +38,7 @@ f_ranking_comandos() {
 
     #Comando completo
 
-    cat ~/.bash_history | awk '{print $1}' | sort | uniq -c | sort -nr | head -10 | awk -v color="${exito}" -v reset="${reset}" '{print color $1 " veces -> " $2 reset}'
+    cat ~/.bash_history | awk '{print $1}' | sort | uniq -c | sort -nr | head -10 | awk '{printf "%3d → %s\n", $1, $2}'
 
 }
 
