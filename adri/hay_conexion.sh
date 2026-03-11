@@ -12,10 +12,10 @@ reset="\e[0m"
 
 f_hay_conexion(){
 	if ping -c 1 -q 8.8.8.8 > /dev/null 2>&1;then
-		echo "Si hay conexión"
+		echo -e "${exito}Si hay conexión${reset}"
 		return 0
 	else
-		echo "No hay conexión"
+		echo -e "${error}No hay conexión${reset}"
 		return 1
 	fi
 }
