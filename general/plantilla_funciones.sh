@@ -9,6 +9,11 @@ read -p "Nombre del script a crear (sin .sh): " nombrescript
 echo "#!/usr/bin/env bash" > "$nombrescript.sh"
 echo "# Autor: Ismael" >> "$nombrescript.sh"
 echo "# Descripción: " >> "$nombrescript.sh"
+echo "# Parametros Entrada: " >> "$nombrescript.sh"
+echo "# Parametros Salida: " >> "$nombrescript.sh"
+echo "# Nombre: " >> "$nombrescript.sh"
+
+
 echo "# Fecha: " >> "$nombrescript.sh"
 echo "" >> "$nombrescript.sh"
 

@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 # Autor: Ismael
 # Descripción: Te muestra la ayuda de un script para saber que parametros usar 
+# Entrada:
+# Salida:
+# Nombre:
 # Fecha: 09/03/26
 
 error="\e[31m"
