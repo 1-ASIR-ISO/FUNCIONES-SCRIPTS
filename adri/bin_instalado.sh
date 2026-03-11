@@ -14,16 +14,16 @@ reset="\e[0m"
 # Parametros Entrada: 1
 # Parametros Salida: Devuelve si esta o no esta instalado el bin
 
-f_bin_instalado(){
-  if command -v "$1" &>/dev/null; then
-	printf "${exito}Si está instalado ${reset}\n"
-	return 0
+f_bin_instalado() {
+   if command -v "$1" &>/dev/null; then
+      printf "${exito}Si está instalado ${reset}\n"
+      return 0
 
-  else
-	printf "${error}No está instalado ${reset}\n"
-	return 1
+   else
+      printf "${error}No está instalado ${reset}\n"
+      return 1
 
-  fi
+   fi
 }
 
 f_bin_instalado "$1"
