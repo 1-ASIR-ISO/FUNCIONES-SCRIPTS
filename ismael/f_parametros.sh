@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 # Autor: Ismael
-# Descripción: Comprueba si se han introducido argumentos al script 
 # Fecha: 09/03/26
 
 error="\e[31m"
@@ -10,9 +9,11 @@ reset="\e[0m"
 
 # =========================================
 
-#Funcion: f_parametros
-#Recibe los argumentos de un script ($@)
-#Funcionamiento: Si hay menos de dos parametros muestra error, llama a f_ayuda y finaliza con exit 1
+# Nombre: f_parametros
+# Descripción: Comprueba si se han introducido argumentos al script. 
+# Parametros Entrada: Parametros del script.
+# Parametros Salida: Devuelve error y ayuda. 
+
 
 f_parametros() {
   if [ $# -lt 2 ]; then

@@ -7,13 +7,7 @@ read -p "Nombre del script a crear (sin .sh): " nombrescript
 
 # Crear el archivo con la cabecera
 echo "#!/usr/bin/env bash" > "$nombrescript.sh"
-echo "# Autor: Ismael" >> "$nombrescript.sh"
-echo "# Descripción: " >> "$nombrescript.sh"
-echo "# Parametros Entrada: " >> "$nombrescript.sh"
-echo "# Parametros Salida: " >> "$nombrescript.sh"
-echo "# Nombre: " >> "$nombrescript.sh"
-
-
+echo "# Autor: " >> "$nombrescript.sh"
 echo "# Fecha: " >> "$nombrescript.sh"
 echo "" >> "$nombrescript.sh"
 
@@ -25,3 +19,8 @@ echo "reset=\"\\e[0m\"" >> "$nombrescript.sh"
 echo "" >> "$nombrescript.sh"
 
 echo "# =========================================" >> "$nombrescript.sh"
+
+echo "# Nombre: " >> "$nombrescript.sh"
+echo "# Descripción: " >> "$nombrescript.sh"
+echo "# Parametros Entrada: " >> "$nombrescript.sh"
+echo "# Parametros Salida: " >> "$nombrescript.sh"

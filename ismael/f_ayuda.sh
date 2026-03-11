@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 # Autor: Ismael
 # Descripción: Te muestra la ayuda de un script para saber que parametros usar 
-# Entrada:
-# Salida:
-# Nombre:
+# Parametros Entrada: No recibe ningún parametro de salida
+# Parametros Salida: Devuelve la ayuda de un script
+# Nombre: f_ayuda
 # Fecha: 09/03/26
 
 error="\e[31m"
@@ -12,11 +12,6 @@ exito="\e[32m"
 reset="\e[0m"
 
 # =========================================
-
-#Funcion: f_ayuda
-#Muestra por pantalla la sintaxis correcta del script, su discripción y los parametros
-#No recibe parametros
-#Salida: Información del uso del script
 
 f_ayuda() {
   printf "${azul}Uso: $0 PARAM1 PARAM2\n"
