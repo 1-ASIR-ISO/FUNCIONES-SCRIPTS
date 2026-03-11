@@ -10,6 +10,12 @@ exito="\e[32m"
 reset="\e[0m"
 
 # =========================================
+#Nombre:
+#Descripción:
+#Parametro Entrada:
+#Parametro Salida:
+
+
 f_paquete_disponible() {
 echo -n "Introduce el nombre del paquete: "
     read nombre_paquete
