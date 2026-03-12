@@ -23,3 +23,4 @@ f_parametros() {
   fi
 }
 
+echo $?
