@@ -9,14 +9,15 @@ reset="\e[0m"
 
 # =========================================
 # Nombre: f_buscar_paquetes
-# Descripción: funcion dedicada a la busqueda de paquetes a traves de un binario
-# Parametros Entrada: 1
-# Parametros Salida: 1
+# Descripción: Busqueda del paquete por binario
+# Parametros Entrada: Nombre del binario
+# Parametros Salida: Nombre del paquete
 
 f_buscar_paquetes() {
     paquete=$(dpkg -S "$1" 2>/dev/null | head -n1 | cut -d: -f1)
     if [ -n "$paquete" ]; then
-        printf "${exito}Paquete: $paquete${reset}\\n"
+	uptime
+#    	printf "${exito}$paquete${reset}\\n"
         return 0
     else
         printf "${error}No encontrado: $1${reset}\\n"
@@ -24,4 +25,6 @@ f_buscar_paquetes() {
     fi
 }
 
-f_buscar_paquetes "$1"
+variable=$(f_buscar_paquetes "tealdeer")
+echo $?
+echo $variable
