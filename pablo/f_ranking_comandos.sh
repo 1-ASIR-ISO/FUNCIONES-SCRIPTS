@@ -12,7 +12,7 @@ reset="\e[0m"
 # Descripción: Muestra los 10 comandos más utilizados por el usuario.
 # Parámetros Entrada: 0
 # Parámetros Salida: Muestra el Top 10 de los comandos más utilizados por el usuario
-#         ordenado de mayor a menor con el nº de veces que se ha ejecutado cada uno.
+# ordenado de mayor a menor con el nº de veces que se ha ejecutado cada uno.
 
 f_ranking_comandos() {
 
