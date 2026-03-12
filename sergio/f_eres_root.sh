@@ -17,12 +17,13 @@ reset="\e[0m"
 f_eres_root() {
    usuario_id=$(id -u)
    if [ $usuario_id = 0 ]; then
-      printf "${exito}Eres root${reset}\n"
+#     printf "${exito}Eres root${reset}\n"
       return 0
    else
-      printf "${error}No eres root, hazlo como root${reset}\n"
+#     printf "${error}No eres root, hazlo como root${reset}\n"
       return 1
    fi
 }
 
 f_eres_root
+echo $?

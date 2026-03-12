@@ -17,12 +17,13 @@ reset="\e[0m"
 f_paquete_disponible() {
    resultado=$(apt-cache policy "$1" 2>/dev/null | grep "Candidato:")
    if [ -n "$resultado" ]; then
-      printf "${exito}Paquete $1 ESTA disponible${reset}\n"
+#     printf "${exito}Paquete $1 ESTA disponible${reset}\n"
       return 0
    else
-      printf "${error}Paquete $1 NO ESTA disponible${reset}\n"
+#     printf "${error}Paquete $1 NO ESTA disponible${reset}\n"
       return 1
    fi
 }
 
 f_paquete_disponible "$1"
+echo $?
