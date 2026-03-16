@@ -11,7 +11,7 @@ reset="\e[0m"
 # Nombre: f_paquete_disponible
 # Descripción: Devuelve cero en caso de estar disponible en el repositorio configurado en sources.list,
 # uno en caso contrario. Se pasa el nombre del paquete como argumento.
-# Parametros Entrada: 1
+# Parametros Entrada: Paquete
 # Parametros Salida: Devuelve si esta disponible (0) el paquete o no (1)
 
 f_paquete_disponible() {
