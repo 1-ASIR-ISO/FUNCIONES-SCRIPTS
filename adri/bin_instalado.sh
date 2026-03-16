@@ -15,13 +15,8 @@ reset="\e[0m"
 # Parametros Salida: Devuelve si esta o no esta instalado el bin
 
 f_bin_instalado() {
-   if command -v "$1" &>/dev/null; then
-      return 0
-   else
-      return 1
-
-   fi
+	command -v "$1" &>/dev/null;
+	echo $?
 }
 
 f_bin_instalado "$1"
-echo $?
