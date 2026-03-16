@@ -19,7 +19,6 @@ f_bin_instalado() {
       return 0
    else
       return 1
-
    fi
 }
 
