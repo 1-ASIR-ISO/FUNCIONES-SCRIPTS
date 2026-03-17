@@ -14,7 +14,7 @@ reset="\e[0m"
 # Parametros Salida: 0 si se ha limpiado correctamente y 1 si no se encontro el directorio
 
 f_limpiar_temporales(){
-	find "$1" -type f -mtime +"$2" --delete
+	sudo find "$1" -type f -mtime +"$2" -delete
 }
 
 f_limpiar_temporales "$1" "$2"
