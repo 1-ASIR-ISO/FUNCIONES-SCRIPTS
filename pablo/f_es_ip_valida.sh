@@ -19,13 +19,13 @@ f_es_ip_valida() {
     ip="$1"
 
     if [ -z "$ip" ]; then
-        echo "${error} No se proporcionó ninguna IP.${reset}" >&2
+        printf "${error}No se proporcionó ninguna IP.${reset}\n" >&2
         return 1
     fi
 
     echo "$ip" | grep -Eq '^([0-9]{1,3}\.){3}[0-9]{1,3}$'
     if [ $? -ne 0 ]; then
-        echo "${error}1${reset}" >&2
+        printf "${error}1${reset}\n" >&2
         return 1
     fi
 
@@ -37,13 +37,40 @@ f_es_ip_valida() {
     for octeto in "$@"
     do
         if [ "$octeto" -lt 0 ] || [ "$octeto" -gt 255 ]; then
-            echo "${error}1${reset}" >&2
+            printf "${error}1${reset}\n" >&2
             return 1
         fi
     done
-    echo "${azul}0${reset}"
+
+    printf "${exito}0${reset}\n"
     return 0
 }
 
-f_es_ip_valida "$1"
+# =========================================
+# MENÚ
+
+printf "${azul}=================================${reset}\n"
+printf " ${exito}Elige una de las dos opciones:${reset}\n"
+printf "${azul}=================================${reset}\n"
+printf "1. Validar tu IP\n"
+printf "2. Validar una IP cualquiera\n\n"
+
+read -p "Opción: " opcion
+
+case $opcion in
+    1)
+        ip=$(ip a | grep 'enp' | grep -Eo '([0-9]{1,3}\.){3}[0-9]{1,3}\/[0-9]{1,2}' | grep -Eo '([0-9]{1,3}\.){3}[0-9]{1,3}')
+        printf "\nTu IP es: ${azul}%s${reset}\n" "$ip"
+        f_es_ip_valida "$ip"
+        ;;
+    2)
+        read -p "Introduce la IP: " ip
+        f_es_ip_valida "$ip"
+        ;;
+    *)
+        printf "${error}Opción no válida.${reset}\n"
+        exit 1
+        ;;
+esac
+
 exit $?
